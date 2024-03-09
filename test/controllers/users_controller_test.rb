@@ -44,4 +44,28 @@ class UsersControllerTest < ActionDispatch::IntegrationTest
                       "activerecord.errors.models.user.attributes.password.too_short"
                     )
   end
+
+  test "renders errors if passwords do not match" do
+    get sign_up_path
+    assert_response :ok
+
+    assert_no_difference %w[User.count Organization.count] do
+      post sign_up_path,
+           params: {
+             user: {
+               name: "John",
+               email: "johndoe@example.com",
+               password: "password",
+               password_confirmation: "wrong_password"
+             }
+           }
+    end
+
+    assert_response :unprocessable_entity
+    assert_select "p.is-danger",
+                  text:
+                    I18n.t(
+                      "activerecord.errors.models.user.attributes.password_confirmation.confirmation"
+                    )
+  end
 end
