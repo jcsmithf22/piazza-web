@@ -72,3 +72,5 @@ group :test do
 end
 
 gem "erb-formatter", "~> 0.7.2", group: :development
+
+gem "premailer-rails", "~> 1.12"
