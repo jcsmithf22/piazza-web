@@ -69,4 +69,14 @@ class UsersControllerTest < ActionDispatch::IntegrationTest
                       "activerecord.errors.models.user.attributes.password_confirmation.confirmation"
                     )
   end
+
+  test "can update user details" do
+    @user = users(:jerry)
+    log_in @user
+
+    patch profile_path, params: { user: { name: "Jerry Seinfield" } }
+
+    assert_redirected_to profile_path
+    assert_equal "Jerry Seinfield", @user.reload.name
+  end
 end
