@@ -12,7 +12,7 @@ class SessionsController < ApplicationController
       )
 
     if @app_session
-      log_in @app_session
+      log_in @app_session, remember: login_params[:remember_me] == "1"
       flash[:success] = t(".success")
       redirect_to root_path
     else
@@ -25,13 +25,13 @@ class SessionsController < ApplicationController
     log_out
 
     flash[:success] = t(".success")
-    # redirect_to root_path, status: :see_other
-    redirect_to login_path, status: :see_other
+    redirect_to root_path, status: :see_other
   end
 
   private
 
   def login_params
-    @login_params ||= params.require(:user).permit(:email, :password)
+    @login_params ||=
+      params.require(:user).permit(:email, :password, :remember_me)
   end
 end
