@@ -25,6 +25,10 @@ module Authenticate
     cookies.encrypted.permanent[:app_session] = { value: app_session.to_h }
   end
 
+  def log_out
+    Current.app_session&.destroy
+  end
+
   def logged_in?
     Current.user.present?
   end
@@ -48,7 +52,8 @@ module Authenticate
 
   def authenticate_using(data)
     data => { user_id:, app_session:, token: }
-    user = User.find_by(id: user_id)
+
+    user = User.find(user_id)
     user.authenticate_app_session(app_session, token)
   rescue NoMatchingPatternError, ActiveRecord::RecordNotFound
     nil
