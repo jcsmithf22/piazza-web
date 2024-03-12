@@ -139,6 +139,9 @@ GEM
       net-imap
       net-pop
       net-smtp
+    mailpace-rails (0.3.2)
+      actionmailer (>= 6.0.0)
+      httparty (>= 0.18.1)
     marcel (1.0.4)
     matrix (0.4.2)
     mini_mime (1.1.5)
@@ -291,6 +294,7 @@ DEPENDENCIES
   jbuilder
   jsbundling-rails
   letter_opener (~> 1.9)
+  mailpace-rails (~> 0.3.2)
   pg (~> 1.1)
   premailer-rails (~> 1.12)
   propshaft

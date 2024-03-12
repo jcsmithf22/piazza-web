@@ -78,3 +78,5 @@ gem "premailer-rails", "~> 1.12"
 gem "letter_opener", "~> 1.9", :group => :development
 
 gem "resend", "~> 0.11.0"
+
+gem "mailpace-rails", "~> 0.3.2"

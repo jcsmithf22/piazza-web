@@ -23,6 +23,6 @@ envVarGroups:
   - name: domains
     envVars:
       - key: DOMAIN_NAME
-        value: piazza-web-vpl6.onrender.com
+        value: josiahsmith.dev
       - key: OUTBOUND_EMAIL_DOMAIN
-        value: reportify.app
+        value: josiahsmith.dev
