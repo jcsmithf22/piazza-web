@@ -1,6 +1,6 @@
 require "test_helper"
 
-class User::PasswordsControllerTest < ActionDispatch::IntegrationTest
+class Users::PasswordsControllerTest < ActionDispatch::IntegrationTest
   setup do
     @user = users(:jerry)
     log_in @user

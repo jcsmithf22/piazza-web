@@ -14,6 +14,7 @@ Rails.application.routes.draw do
 
   namespace :users do
     patch "change_password", to: "passwords#update"
+    resources :password_resets, only: %i[new create edit update]
   end
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
