@@ -4,6 +4,9 @@
 
 import { application } from "./application"
 
+import Bridge__NavMenuController from "./bridge/nav_menu_controller"
+application.register("bridge--nav-menu", Bridge__NavMenuController)
+
 import FormResetController from "./form_reset_controller"
 application.register("form-reset", FormResetController)
 

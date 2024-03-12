@@ -56,9 +56,22 @@
         <%= form.submit t(".change_password_button"),
                     class:
                       "button is-primary is-align-self-flex-end
-                        mb-3 mt-3" %>
+                                mb-3 mt-3" %>
         <%= render "application/flashes" if turbo_frame_request? %>
       <% end %>
     </layout-column>
   </layout-columns>
+<% end %>
+
+<% if turbo_native_app? %>
+  <ol data-controller="bridge--nav-menu">
+    <li>
+      <%= button_to t("application.navbar.logout"),
+      logout_path,
+      method: :delete,
+      data: {
+        bridge__nav_menu_target: "item",
+      } %>
+    </li>
+  </ol>
 <% end %>
