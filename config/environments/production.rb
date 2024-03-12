@@ -68,10 +68,13 @@ Rails.application.configure do
   # config.active_job.queue_name_prefix = "piazza_production"
 
   config.action_mailer.perform_caching = false
+  config.action_mailer.delivery_method = :resend
   config.action_mailer.default_url_options = {
-    host: "piazza-web-vpl6.onrender.com",
+    host: ENV["DOMAIN_NAME"],
     protocol: "https"
   }
+
+  config.outbound_email_domain = ENV["OUTBOUND_EMAIL_DOMAIN"]
 
   # Ignore bad email addresses and do not raise email delivery errors.
   # Set this to true and configure the email server for immediate delivery to raise delivery errors.

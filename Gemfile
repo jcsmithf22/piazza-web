@@ -76,3 +76,5 @@ gem "erb-formatter", "~> 0.7.2", group: :development
 gem "premailer-rails", "~> 1.12"
 
 gem "letter_opener", "~> 1.9", :group => :development
+
+gem "resend", "~> 0.11.0"
