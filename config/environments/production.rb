@@ -68,7 +68,7 @@ Rails.application.configure do
   # config.active_job.queue_name_prefix = "piazza_production"
 
   config.action_mailer.perform_caching = false
-  config.action_mailer.delivery_method = :resend
+  config.action_mailer.delivery_method = :mailpace
   config.action_mailer.default_url_options = {
     host: ENV["DOMAIN_NAME"],
     protocol: "https"
