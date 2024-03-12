@@ -12,6 +12,8 @@ Rails.application.routes.draw do
 
   resource :profile, only: %i[show update], controller: "users"
 
+  resources :listings, except: :index
+
   namespace :users do
     patch "change_password", to: "passwords#update"
     resources :password_resets, only: %i[new create edit update]

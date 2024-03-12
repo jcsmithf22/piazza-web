@@ -5,6 +5,8 @@ en:
       submit: Login
       remember_me: Remember me
       password_reset: Forgot your password?
+      sign_up_message: Haven't got an account yet?
+      sign_up: Sign up now.
     create:
       success: You're logged in!
       incorrect-details: The email or password is incorrect. Please try again.
