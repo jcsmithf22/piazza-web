@@ -50,6 +50,7 @@ gem "bootsnap", require: false
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem "debug", platforms: %i[mri windows]
+  gem "faker"
 end
 
 group :development do
@@ -75,7 +76,7 @@ gem "erb-formatter", "~> 0.7.2", group: :development
 
 gem "premailer-rails", "~> 1.12"
 
-gem "letter_opener", "~> 1.9", :group => :development
+gem "letter_opener", "~> 1.9", group: :development
 
 gem "resend", "~> 0.11.0"
 
