@@ -12,7 +12,8 @@ class ListingsControllerTest < ActionDispatch::IntegrationTest
            params: {
              listing: {
                title: Faker::Commerce.product_name,
-               price: Faker::Commerce.price.floor
+               price: Faker::Commerce.price.floor,
+               condition: "mint"
              }
            }
     end
@@ -22,7 +23,14 @@ class ListingsControllerTest < ActionDispatch::IntegrationTest
 
   test "error when creating an invalid listing" do
     assert_no_difference "Listing.count" do
-      post listings_path, params: { listing: { title: "title", price: 300 } }
+      post listings_path,
+           params: {
+             listing: {
+               title: "title",
+               price: 300,
+               condition: "mint"
+             }
+           }
     end
 
     assert_response :unprocessable_entity

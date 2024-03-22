@@ -37,3 +37,11 @@
 // @import "bulma/sass/layout/section.sass";
 
 @import 'bulma/bulma';
+
+.field.has-addons {
+    flex-wrap: wrap;
+}
+
+.field.has-addons p.help {
+    flex-basis: 100%;
+}
